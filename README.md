@@ -1,4 +1,5 @@
-# -
-- JavaClone
+# 随笔
+- Java/JavaClone
 
-  Java的复制
+  Java对象clone，java浅克隆与深克隆
+
