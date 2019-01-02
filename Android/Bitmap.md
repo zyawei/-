@@ -1,0 +1,1 @@
+# Android Bitmap 为什么需要receycle()
