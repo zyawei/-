@@ -1,4 +1,0 @@
-# Thread interrupt
-
-## interrupt()
-
