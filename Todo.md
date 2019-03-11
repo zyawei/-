@@ -45,7 +45,7 @@ gitlab
 # 2019-03-04
 
 - SimpleTextAdapter(分享)
-- database indices(学习)
 - ConstraintLayout (复习)
-
 - AppExecutor (更新博客)
+- B+（索引）树，B-树（多值索引），平衡二叉树
+
