@@ -7,6 +7,48 @@
 
 ## 主键 外键 索引
 
+### 主键
+
+主键是数据表的唯一索引，**用来保证数据完整性**
+
+### 外键
+
+表的外键是另一表的主键（亦可以是唯一性索引）, 外键可以有重复的, 可以是空值。**用来和其他表建立联系用的**
+
+设置外键，在参照表(referencing table) 和被参照表 (referenced table) 中，相对应的两个字段必须都设置索引(index)。？？
+
+### 索引
+
+是对数据库表中一列或多列的值进行排序的一种结构；**是提高查询排序的速度**
+
+索引用来快速地寻找那些具有特定值的记录，所有MySQL索引都以B-树的形式保存。如果没有索引，执行查询时MySQL必须从第一个记录开始扫描整个表的所有记录，直至找到符合要求的记录。
+
+#### 唯一性索引
+索引列的所有值都只能出现一次。（主键就是唯一性索引）
+
+作用：1，提升速度；2，避免数据重复出现；
+
+#### 多列索引
+
+当我们执行查询的时候，MySQL只能使用一个索引。如果你有三个单列的索引，MySQL[会试](https://www.baidu.com/s?wd=%E4%BC%9A%E8%AF%95&tn=24004469_oem_dg&rsv_dl=gh_pl_sl_csd)图选择一个限制最严格的索引。但是，即使是限制最严格的单列索引，它的限制能力也肯定远远低于firstname、lastname、age这三个列上的多列索引。 
+
+** 最左前缀 ** 
+我们有一个firstname、lastname、age列上的多列索引，我们称这个索引为fname_lname_age。当搜索条件是以下各种列的组合时，MySQL将使用fname_lname_age索引： 
+
+```
+firstname，lastname，age
+firstname，lastname
+firstname
+```
+
+从另一方面理解，它相当于我们创建了(firstname，lastname，age)、(firstname，lastname)以及(firstname)这些列组合上的索引。下面这些查询都能够使用这个fname_lname_age索引： 
+
+#### 选择索引列
+1、在WHERE子句中出现的列
+2、在join子句中出现的列。
+
+参考： https://blog.csdn.net/xrt95050/article/details/5556411
+
 
 
 
