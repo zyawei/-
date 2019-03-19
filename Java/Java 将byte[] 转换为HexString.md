@@ -84,6 +84,6 @@ public static String bytesToHexString(byte[] bytes) {
 
 **查表法关键点在于获取byte字符的高4位：**
 
-[如何获取byte高四位](https://github.com/zyawei/Essay/blob/master/Java/Java byte 移位操作.md)
+[如何获取byte高四位](https://github.com/zyawei/Essay/blob/master/Java/Java%20byte%20%E7%A7%BB%E4%BD%8D%E6%93%8D%E4%BD%9C.md)
 
 
