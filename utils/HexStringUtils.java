@@ -1,24 +1,18 @@
-package com.miaxis.mxhidfingerdriverdome;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * @date: 2018/12/28 8:34
  * @author: zhang.yw
- * @project: BTFingerPrinterLibDemo
  */
 public class HexStringUtils {
+    private static final char[] HEX_ARRAY = "0123456789abcdef".toCharArray();
+    private static final char[] CHAR_ARRAY = new char[128];
 
-    /**
-     * 在数组中截取有效字符（遇到终止符 0 即停止）并转换为String
-     */
-    public static String toStringUntilZero(byte[] bytes) {
-        int index = -1;
-        for (int i = 0; i < bytes.length; i++) {
-            if (0 == bytes[i]) {
-                index = i;
-                break;
-            }
+    static {
+        for (int i = 0; i < HEX_ARRAY.length; i++) {
+            char c = HEX_ARRAY[i];
+            CHAR_ARRAY[c] = (char) i;
         }
-        return new String(bytes, 0, index == -1 ? bytes.length : index);
     }
 
     /**
@@ -29,16 +23,18 @@ public class HexStringUtils {
      * @return HexString
      * @see #hexStringToBytes(String)
      */
-    public static String bytesToHexString(byte[] bytes) {
-        if (bytes == null || bytes.length == 0) {
-            return "";
+
+    public static String bytesToHexString(@NotNull byte[] bytes) {
+        char[] hexChars = new char[bytes.length * 3];
+        for (int j = 0, len = bytes.length; j < len; j++) {
+            int v = bytes[j] & 0xFF;
+            hexChars[j * 3] = HEX_ARRAY[v >>> 4];
+            hexChars[j * 3 + 1] = HEX_ARRAY[v & 0xF];
+            hexChars[j * 3 + 2] = ' ';
         }
-        StringBuilder sb = new StringBuilder(bytes.length * 2);
-        for (byte aByte : bytes) {
-            sb.append(Integer.toHexString(aByte & 0xff)).append(' ');
-        }
-        return sb.toString();
+        return new String(hexChars);
     }
+
 
     /**
      * 将{@link #bytesToHexString(byte[])}转换的String 还原
@@ -47,21 +43,13 @@ public class HexStringUtils {
      * @return byte array
      * @see #bytesToHexString(byte[])
      */
-    public static byte[] hexStringToBytes(String hexString) {
-        if (hexString == null || hexString.length() == 0) {
-            return new byte[0];
+    public static byte[] hexStringToBytes(@NotNull String hexString) {
+        byte[] bytes = new byte[hexString.length() / 3];
+        for (int i = 0, len = bytes.length; i < len; i++) {
+            int i0 = CHAR_ARRAY[hexString.charAt(i * 3)];
+            int i1 = CHAR_ARRAY[hexString.charAt(i * 3 + 1)];
+            bytes[i] = (byte) ((i0 << 4) | (i1 & 0xf));
         }
-        String[] split = hexString.split(" ");
-        byte[] result = new byte[split.length];
-        try {
-            for (int i = 0; i < split.length; i++) {
-                int i1 = Integer.parseInt(split[i], 16);
-                result[i] = (byte) i1;
-            }
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-        }
-        return result;
+        return bytes;
     }
-
 }

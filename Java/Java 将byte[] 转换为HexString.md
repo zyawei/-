@@ -86,4 +86,8 @@ public static String bytesToHexString(byte[] bytes) {
 
 [如何获取byte高四位](https://github.com/zyawei/Essay/blob/master/Java/Java%20byte%20%E7%A7%BB%E4%BD%8D%E6%93%8D%E4%BD%9C.md)
 
+**完整的HexStringUtils：**
+
+[HexStringUtils](https://github.com/zyawei/Essay/blob/master/utils/HexStringUtils.java)
+
 
