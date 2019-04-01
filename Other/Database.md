@@ -92,3 +92,23 @@ public Long foreignKey;// 则外键可NULL
 
 ```
 
+## 一些Sql语句
+
+```sql
+查询记录数量,同一个user只统计一次
+SELECT COUNT(distinct user_id)
+FROM record
+WHERE user_id= :userId and game_id = :gameId and site= :site
+```
+
+```sql
+多表查询，连接3张表进行查询
+select record.site , record.time ,user_group.name as groupName , user_group.id as groupId, photo.path as photo 
+from record 
+left join photo on record.id=photo.record_id
+left join user on record.user_id=user.id 
+left join user_group on user.group_id=user_group.id 
+where game_id=:gameId 
+order by user_group.id asc 
+```
+
