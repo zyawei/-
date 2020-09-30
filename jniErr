@@ -1,0 +1,71 @@
+A: art/runtime/java_vm_ext.cc:496] JNI DETECTED ERROR IN APPLICATION: use of invalid jobject 0x720cca5fe8
+A: art/runtime/java_vm_ext.cc:496]     from int com.fingerprint.ISOANSI.zzFP_Compress(int, int, int, byte[], int, byte[])
+A: art/runtime/java_vm_ext.cc:496] "pool-1-thread-1" prio=5 tid=16 Runnable
+A: art/runtime/java_vm_ext.cc:496]   | group="main" sCount=0 dsCount=0 obj=0x12e488b0 self=0x720cbea800
+A: art/runtime/java_vm_ext.cc:496]   | sysTid=6678 nice=0 cgrp=default sched=0/0 handle=0x720a3fa450
+A: art/runtime/java_vm_ext.cc:496]   | state=R schedstat=( 329106760 37232234 195 ) utm=29 stm=3 core=1 HZ=100
+A: art/runtime/java_vm_ext.cc:496]   | stack=0x720a2f8000-0x720a2fa000 stackSize=1037KB
+A: art/runtime/java_vm_ext.cc:496]   | held mutexes= "mutator lock"(shared held)
+A: art/runtime/java_vm_ext.cc:496]   native: #00 pc 000000000047c2a8  /system/lib64/libart.so (_ZN3art15DumpNativeStackERNSt3__113basic_ostreamIcNS0_11char_traitsIcEEEEiP12BacktraceMapPKcPNS_9ArtMethodEPv+220)
+A: art/runtime/java_vm_ext.cc:496]   native: #01 pc 000000000047c2a4  /system/lib64/libart.so (_ZN3art15DumpNativeStackERNSt3__113basic_ostreamIcNS0_11char_traitsIcEEEEiP12BacktraceMapPKcPNS_9ArtMethodEPv+216)
+A: art/runtime/java_vm_ext.cc:496]   native: #02 pc 000000000045051c  /system/lib64/libart.so (_ZNK3art6Thread9DumpStackERNSt3__113basic_ostreamIcNS1_11char_traitsIcEEEEbP12BacktraceMap+944)
+A: art/runtime/java_vm_ext.cc:496]   native: #03 pc 00000000002ee0a4  /system/lib64/libart.so (_ZN3art9JavaVMExt8JniAbortEPKcS2_+1560)
+A: art/runtime/java_vm_ext.cc:496]   native: #04 pc 00000000002ef780  /system/lib64/libart.so (_ZN3art9JavaVMExt9JniAbortFEPKcS2_z+188)
+A: art/runtime/java_vm_ext.cc:496]   native: #05 pc 00000000004551b4  /system/lib64/libart.so (_ZNK3art6Thread13DecodeJObjectEP8_jobject+404)
+A: art/runtime/java_vm_ext.cc:496]   native: #06 pc 0000000000101234  /system/lib64/libart.so (_ZN3art11ScopedCheck10CheckArrayERNS_18ScopedObjectAccessEP7_jarray+60)
+A: art/runtime/java_vm_ext.cc:496]   native: #07 pc 00000000000ff664  /system/lib64/libart.so (_ZN3art11ScopedCheck5CheckERNS_18ScopedObjectAccessEbPKcPNS_12JniValueTypeE+1124)
+A: art/runtime/java_vm_ext.cc:496]   native: #08 pc 0000000000109404  /system/lib64/libart.so (_ZN3art8CheckJNI25GetPrimitiveArrayElementsEPKcNS_9Primitive4TypeEP7_JNIEnvP7_jarrayPh+640)
+A: art/runtime/java_vm_ext.cc:496]   native: #09 pc 0000000000087280  /data/app/com.herofun.demo.usb.debug-1/base.apk (???)
+A: art/runtime/java_vm_ext.cc:496]   native: #10 pc 0000000000086fc4  /data/app/com.herofun.demo.usb.debug-1/base.apk (???)
+A: art/runtime/java_vm_ext.cc:496]   native: #11 pc 000000000004df64  /data/app/com.herofun.demo.usb.debug-1/oat/arm64/base.odex (Java_com_fingerprint_ISOANSI_zzFP_1Compress__III_3BI_3B+208)
+A: art/runtime/java_vm_ext.cc:496]   at com.fingerprint.ISOANSI.zzFP_Compress(Native method)
+A: art/runtime/java_vm_ext.cc:496]   at com.mx.finger.api.herofun.DefaultHeroFunAlg.compressToWSQ(DefaultHeroFunAlg.java:87)
+A: art/runtime/java_vm_ext.cc:496]   at com.mx.finger.api.herofun.DefaultHeroFunApi.compressToWSQ(DefaultHeroFunApi.java:124)
+A: art/runtime/java_vm_ext.cc:496]   at java.lang.reflect.Method.invoke!(Native method)
+A: art/runtime/java_vm_ext.cc:496]   at com.mx.finger.api.herofun.HeroFunApiFactory$ApiProxyHandler.invoke(HeroFunApiFactory.java:111)
+A: art/runtime/java_vm_ext.cc:496]   at java.lang.reflect.Proxy.invoke(Proxy.java:813)
+A: art/runtime/java_vm_ext.cc:496]   at com.mx.finger.api.herofun.HeroFunApi.compressToWSQ(HeroFunApi.java:-2)
+A: art/runtime/java_vm_ext.cc:496]   at com.herofun.demo.HeroFunActivity.compressWSQ(HeroFunActivity.java:401)
+A: art/runtime/java_vm_ext.cc:496]   at com.herofun.demo.HeroFunActivity.lambda$TPGiMhlHhaeRWf5-4n6famPHf7I(HeroFunActivity.java:-1)
+A: art/runtime/java_vm_ext.cc:496]   at com.herofun.demo.-$$Lambda$HeroFunActivity$TPGiMhlHhaeRWf5-4n6famPHf7I.run(lambda:-1)
+A: art/runtime/java_vm_ext.cc:496]   at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1133)
+A: art/runtime/java_vm_ext.cc:496]   at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:607)
+A: art/runtime/java_vm_ext.cc:496]   at java.lang.Thread.run(Thread.java:761)
+A: art/runtime/java_vm_ext.cc:496] 
+A: art/runtime/runtime.cc:403] Runtime aborting...
+A: art/runtime/runtime.cc:403] Aborting thread:
+A: art/runtime/runtime.cc:403] "pool-1-thread-1" prio=5 tid=16 Native
+A: art/runtime/runtime.cc:403]   | group="" sCount=0 dsCount=0 obj=0x12e488b0 self=0x720cbea800
+A: art/runtime/runtime.cc:403]   | sysTid=6678 nice=0 cgrp=default sched=0/0 handle=0x720a3fa450
+A: art/runtime/runtime.cc:403]   | state=R schedstat=( 375738220 45060082 257 ) utm=32 stm=5 core=2 HZ=100
+A: art/runtime/runtime.cc:403]   | stack=0x720a2f8000-0x720a2fa000 stackSize=1037KB
+A: art/runtime/runtime.cc:403]   | held mutexes= "abort lock"
+A: art/runtime/runtime.cc:403]   native: #00 pc 000000000047c2a8  /system/lib64/libart.so (_ZN3art15DumpNativeStackERNSt3__113basic_ostreamIcNS0_11char_traitsIcEEEEiP12BacktraceMapPKcPNS_9ArtMethodEPv+220)
+A: art/runtime/runtime.cc:403]   native: #01 pc 000000000047c2a4  /system/lib64/libart.so (_ZN3art15DumpNativeStackERNSt3__113basic_ostreamIcNS0_11char_traitsIcEEEEiP12BacktraceMapPKcPNS_9ArtMethodEPv+216)
+A: art/runtime/runtime.cc:403]   native: #02 pc 000000000045051c  /system/lib64/libart.so (_ZNK3art6Thread9DumpStackERNSt3__113basic_ostreamIcNS1_11char_traitsIcEEEEbP12BacktraceMap+944)
+A: art/runtime/runtime.cc:403]   native: #03 pc 000000000043e418  /system/lib64/libart.so (_ZNK3art10AbortState10DumpThreadERNSt3__113basic_ostreamIcNS1_11char_traitsIcEEEEPNS_6ThreadE+56)
+A: art/runtime/runtime.cc:403]   native: #04 pc 000000000043e294  /system/lib64/libart.so (_ZNK3art10AbortState4DumpERNSt3__113basic_ostreamIcNS1_11char_traitsIcEEEE+668)
+A: art/runtime/runtime.cc:403]   native: #05 pc 0000000000431e10  /system/lib64/libart.so (_ZN3art7Runtime5AbortEv+144)
+A: art/runtime/runtime.cc:403]   native: #06 pc 00000000000e5478  /system/lib64/libart.so (_ZN3art10LogMessageD2Ev+1208)
+A: art/runtime/runtime.cc:403]   native: #07 pc 00000000002ee770  /system/lib64/libart.so (_ZN3art9JavaVMExt8JniAbortEPKcS2_+3300)
+A: art/runtime/runtime.cc:403]   native: #08 pc 00000000002ef780  /system/lib64/libart.so (_ZN3art9JavaVMExt9JniAbortFEPKcS2_z+188)
+A: art/runtime/runtime.cc:403]   native: #09 pc 00000000004551b4  /system/lib64/libart.so (_ZNK3art6Thread13DecodeJObjectEP8_jobject+404)
+A: art/runtime/runtime.cc:403]   native: #10 pc 0000000000101234  /system/lib64/libart.so (_ZN3art11ScopedCheck10CheckArrayERNS_18ScopedObjectAccessEP7_jarray+60)
+A: art/runtime/runtime.cc:403]   native: #11 pc 00000000000ff664  /system/lib64/libart.so (_ZN3art11ScopedCheck5CheckERNS_18ScopedObjectAccessEbPKcPNS_12JniValueTypeE+1124)
+A: art/runtime/runtime.cc:403]   native: #12 pc 0000000000109404  /system/lib64/libart.so (_ZN3art8CheckJNI25GetPrimitiveArrayElementsEPKcNS_9Primitive4TypeEP7_JNIEnvP7_jarrayPh+640)
+A: art/runtime/runtime.cc:403]   native: #13 pc 0000000000087280  /data/app/com.herofun.demo.usb.debug-1/base.apk (???)
+A: art/runtime/runtime.cc:403]   native: #14 pc 0000000000086fc4  /data/app/com.herofun.demo.usb.debug-1/base.apk (???)
+A: art/runtime/runtime.cc:403]   native: #15 pc 000000000004df64  /data/app/com.herofun.demo.usb.debug-1/oat/arm64/base.odex (???)
+A: art/runtime/runtime.cc:403]   at com.fingerprint.ISOANSI.zzFP_Compress(Native method)
+A: art/runtime/runtime.cc:403]   at com.mx.finger.api.herofun.DefaultHeroFunAlg.compressToWSQ(DefaultHeroFunAlg.java:87)
+A: art/runtime/runtime.cc:403]   at com.mx.finger.api.herofun.DefaultHeroFunApi.compressToWSQ(DefaultHeroFunApi.java:124)
+A: art/runtime/runtime.cc:403]   at java.lang.reflect.Method.invoke!(Native method)
+A: art/runtime/runtime.cc:403]   at com.mx.finger.api.herofun.HeroFunApiFactory$ApiProxyHandler.invoke(HeroFunApiFactory.java:111)
+A: art/runtime/runtime.cc:403]   at java.lang.reflect.Proxy.invoke(Proxy.java:813)
+A: art/runtime/runtime.cc:403]   at com.mx.finger.api.herofun.HeroFunApi.compressToWSQ(HeroFunApi.java:-2)
+A: art/runtime/runtime.cc:403]   at com.herofun.demo.HeroFunActivity.compressWSQ(HeroFunActivity.java:401)
+A: art/runtime/runtime.cc:403]   at com.herofun.demo.HeroFunActivity.lambda$TPGiMhlHhaeRWf5-4n6famPHf7I(HeroFunActivity.java:-1)
+A: art/runtime/runtime.cc:403]   at com.herofun.demo.-$$Lambda$HeroFunActivity$TPGiMhlHhaeRWf5-4n6famPHf7I.run(lambda:-1)
+A: art/runtime/runtime.cc:403]   at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1133)
+A: art/runtime/runtime.cc:403]   at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:607)
+A: art/runtime/runtime.cc:403]   at java.lang.Thread.run(Thread.java:761)

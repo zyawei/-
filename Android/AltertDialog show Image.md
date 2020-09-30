@@ -5,7 +5,7 @@
 ```java
 AlertDialog dialog = new AlertDialog.Builder(this)
     .setTitle("title")
-    .setView(R.layout.your_layout_id)// yout layout contains a ImageView
+    .setView(R.layout.your_layout_id)// your layout contains a ImageView
     .setPositiveButton("positive", null)
     .show();
 ImageView v = dialog.findViewById(R.id.your_image_view_id);

@@ -1,4 +1,5 @@
-import org.jetbrains.annotations.NotNull;
+package com.mx.finger.utils;
+
 
 /**
  * @date: 2018/12/28 8:34
@@ -15,18 +16,21 @@ public class HexStringUtils {
         }
     }
 
+    public static String bytesToHexString( byte[] bytes){
+        return bytesToHexString(bytes,bytes.length);
+    }
     /**
      * 将byte[] 数组转换为十六进制字符串，每个byte以空格分割
      * 使用{@link #hexStringToBytes(String)}可还原此byte[]
      *
      * @param bytes byte array
+     * @param length length
      * @return HexString
      * @see #hexStringToBytes(String)
      */
-
-    public static String bytesToHexString(@NotNull byte[] bytes) {
-        char[] hexChars = new char[bytes.length * 3];
-        for (int j = 0, len = bytes.length; j < len; j++) {
+    public static String bytesToHexString(byte[] bytes,int length) {
+        char[] hexChars = new char[length * 3];
+        for (int j = 0; j < length; j++) {
             int v = bytes[j] & 0xFF;
             hexChars[j * 3] = HEX_ARRAY[v >>> 4];
             hexChars[j * 3 + 1] = HEX_ARRAY[v & 0xF];
@@ -35,7 +39,6 @@ public class HexStringUtils {
         return new String(hexChars);
     }
 
-
     /**
      * 将{@link #bytesToHexString(byte[])}转换的String 还原
      *
@@ -43,7 +46,7 @@ public class HexStringUtils {
      * @return byte array
      * @see #bytesToHexString(byte[])
      */
-    public static byte[] hexStringToBytes(@NotNull String hexString) {
+    public static byte[] hexStringToBytes(String hexString) {
         byte[] bytes = new byte[hexString.length() / 3];
         for (int i = 0, len = bytes.length; i < len; i++) {
             int i0 = CHAR_ARRAY[hexString.charAt(i * 3)];
