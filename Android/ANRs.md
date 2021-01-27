@@ -87,7 +87,7 @@ DALVIK THREADS:
 - ZOMBIE - deceased (you shouldn't see this).
 - RUNNING (a/k/a RUNNABLE) - thread is actively running. The VM has to suspend all threads to do the stack dump, so you generally won't see this for any thread other than the one that is dumping the stack.
 - WAIT - the thread called wait(), and is patiently waiting.
-- TIMED_WAIT - thread called wait(), with a timeout. (Thread.sleep() is implemented as a timed wait.)
+- TIMED_WAIT - thread called wait(), with a timeout. **(Thread.sleep() is implemented as a timed wait.)**
 - MONITOR - thread is blocked on a monitor lock, i.e. it's stuck trying to enter a "synchronized" block.
 - NATIVE - thread is executing in native code. The VM doesn't suspend threads in native code unless they make a JNI call (at which point they transition to RUNNING, and then immediately to SUSPENDED).
 - VMWAIT - thread is blocked acquiring a VM resource, like an internal mutex. Or maybe waiting for something to do (e.g. the Compiler and GC threads).

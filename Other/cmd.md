@@ -1,0 +1,1 @@
+adb shell cat /dev/ttyS3 | hexdump -C
